@@ -91,12 +91,12 @@ def time_stats(df):
     print('\nWhat is the most popular day for traveling?\n', df['Day of Week'].mode()[0])
 
     # display the most common start hour
-    print('\nWhat is the most popular hour of the day to start your travels?\n', df['Hour'].mode()[0])
-    #hr = df['Hour'].mode()[0]
-    #if hr <= 12:
-     #   print('\nMost common start hour is: {} AM'.format(hr))
-    #else:
-     #   print('\nMost common start hour is: {} PM'.format(hr%12))
+    #print('\nWhat is the most popular hour of the day to start your travels?\n', df['Hour'].mode()[0])
+    hr = df['Hour'].mode()[0]
+    if hr <= 12:
+        print('\nWhat is the most popular hour of the day to start your travels?\n {} AM'.format(hr))
+    else:
+       print('\n\nWhat is the most popular hour of the day to start your travels?\n {} PM'.format(hr%12))
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
