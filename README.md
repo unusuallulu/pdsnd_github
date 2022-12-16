@@ -44,7 +44,7 @@ Next is where the calculations are made, the program will display all the follow
 - General breakdown of users birth year: oldest, youngest and most popular.
 
 At the end, the program asks the user whether they want to see the first few rows of trip dats.
-if the user choose yes: first few rows are displayed. Then the user is again prompted to decide whether to continue or not. This prompt is kept on repeat until the user decides 'No'. 
+if the user choose yes: first few rows are displayed. Then the user is again prompted to decide whether to continue or not. This prompt is kept on repeat until the user decides 'No'.
 
 ### Files used
 File data for three cities:
@@ -53,3 +53,20 @@ File data for three cities:
 * washington.csv
 
 ### Credits
+Resources that helped me:
+* I was facing some errors and the following and the following sources have helped
+https://stackoverflow.com/questions/60214194/error-in-reading-stock-data-datetimeproperties-object-has-no-attribute-week
+
+https://bobbyhadz.com/blog/python-keyerror-0
+
+
+* Validation of input
+https://bobbyhadz.com/blog/python-input-validation
+
+* Summary statistics
+https://datatofish.com/descriptive-statistics-pandas/
+
+* Combining start and end station columns
+https://www.geeksforgeeks.org/combining-multiple-columns-in-pandas-groupby-with-dictionary/
+* User types
+https://www.marsja.se/pandas-count-occurrences-in-column-unique-values/
