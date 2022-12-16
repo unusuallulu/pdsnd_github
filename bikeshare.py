@@ -31,11 +31,11 @@ def get_filters():
 
 
     print('\nExcellent! We\'ll make sure to filter by', month,'!\n')
-    
+
     # get user input for day of week (all, monday, tuesday, ... sunday)
-    day = input('Now let\'s specify a day of week to filter by, please type the full day name or enter "all" to apply no day filter.\n').title()
-    while day not in ('All' , 'Monday' , 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday' , 'Sunday'):
-        day = input('Invalid input! you must enter a day from Monday - Sunday. Kindly try again.\n\n').title()
+    day = input('Now let\'s specify a day of week to filter by, please type abbreviated day name(i.e Mon, Tues) or enter "all" to apply no day filter.\n').title()
+    while day not in ('All' , 'Mon' , 'Tues' , 'Wed' , 'Thurs' , 'Fri' , 'Sat' , 'Sun'):
+        day = input('Invalid input! you must enter a day from Mon - Sun. Kindly try again.\n\n').title()
 
 
     print('\nGreat! We\'ll make sure to filter by', day,'!\n')
@@ -58,10 +58,10 @@ def load_data(city, month, day):
     """
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
-    
+
     # convert the Start Time column to datetime
     df['Start Time']=pd.to_datetime(df['Start Time'])
-    
+
     # extract month and day of week from Start Time to create new columns
     df['Month'] = df['Start Time'].dt.month_name()
     df['Day of Week'] = df['Start Time'].dt.day_name()
@@ -69,7 +69,7 @@ def load_data(city, month, day):
     # filter by month if applicable
     if month != 'All':
         df = df[df['Month'] == month]
-        
+
     # filter by day of week if applicable
     if day != 'All':
         df = df[df['Day of Week'] == day.title()]
@@ -168,7 +168,7 @@ def user_stats(df):
         print('\nWhat is the oldest, youngest, and most popular year of birth, respectivly?\n', earliest_birth_year,',', recent_birth_year,',', common_birth_year )
     except:
         print('\nNo Birth year data to share.')
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -184,7 +184,7 @@ def display_data(city):
         if view_data == 'no':
             break
     print('-'*40)
-        
+
 def main():
     while True:
         city, month, day = get_filters()
